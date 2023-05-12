@@ -30,12 +30,12 @@ do
         extension=${FILE_EXTENSIONS[ $RANDOM % ${#FILE_EXTENSIONS[@]} ]}
         filename="${x}/file$( printf %03d "$n" )${extension}"
 
-        if [[ $(( RANDOM % 5 )) -eq 4 ]]; then
+        if [[ $(( RANDOM % 10 )) -eq 8 ]]; then
             # Make a big file ~10% of the time
             size=$(( RANDOM*BIG_FILE_FACTOR + 1024 ))
         else
             # Make a small file normally
-            size=$(( RANDOM + 1024 ))
+            size=$(( RANDOM/2 + 1024 ))
         fi
         # Dividing by BLOCK_SIZE because it speeds up `dd`, but gives approx the same size
         size=$(( size / BLOCK_SIZE ))
