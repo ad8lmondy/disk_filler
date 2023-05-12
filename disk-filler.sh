@@ -23,6 +23,7 @@ FILE_EXTENSIONS=(
 for x in {a..l}/{m..t}/{w..z}
 do
     mkdir -p "${x}"
+    echo "Filling ${x}"
 
     for n in {1..10}; do
         # pick a random extension
