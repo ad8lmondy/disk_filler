@@ -40,7 +40,7 @@ do
         size=$(( size / BLOCK_SIZE ))
 
         # make file full of zeroes
-        dd if="${DATA_SOURCE}" of="${filename}" bs="${BLOCK_SIZE}" count="${size}"
+        dd if="${DATA_SOURCE}" of="${filename}" bs="${BLOCK_SIZE}" count="${size}" &> /dev/null
 
         if [[ $(( RANDOM % 10 )) -ge 8 ]]; then
             # Make an old file ~20% of the time
